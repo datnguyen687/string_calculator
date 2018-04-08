@@ -105,7 +105,7 @@ int CStringCalculator::add(std::string &s) {
         std::string temp=s.substr(position, length);
         if(isNumber(temp)) {
             auto value=std::atoi(temp.c_str());
-            if(value>=0) {
+            if(value>=0 && value<=1000) {
                 values.push_back(value);
             }else{
                 negativeString+=","+temp;
@@ -118,7 +118,7 @@ int CStringCalculator::add(std::string &s) {
         std::string temp=s.substr(delimiterDetails.at(size-1).pos+1);
         if(isNumber(temp)) {
             auto value=std::atoi(temp.c_str());
-            if(value>=0) {
+            if(value>=0 && value<=1000) {
                 values.push_back(value);
             }else{
                 negativeString+=","+temp;
